@@ -8,7 +8,6 @@ local b = w:CreateFolder("Those who are dead")
 b:Button("Kill all on",function(bool)
 getgenv().electricboogaloo = true
 while electricboogaloo == true do
-pcall(function()
     wait()
 for i,v in next, game:GetService("Workspace").Entities.Infected:GetChildren() do
 
@@ -27,7 +26,7 @@ local args = {
 game:GetService("ReplicatedStorage").RE:FireServer(unpack(args))
 
 end
-end)
+
 end
 
   
