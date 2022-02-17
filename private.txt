@@ -50,7 +50,6 @@ MAMAMIA.__namecall = newcclosure(function(self, ...)
             ["Velocity"] = args[2][1]["Velocity"] --[[Vector3]],
             ["Special"] = "H"
         
-
 }
     end
 end
