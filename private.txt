@@ -7,11 +7,12 @@ local b = w:CreateFolder("Those who are dead")
 
 b:Button("Kill all on",function(bool)
 getgenv().electricboogaloo = true
-
-for i,v in pairs, game:GetService("Workspace").Entities.Infected:GetChildren() do
 while electricboogaloo == true do
 pcall(function()
     wait()
+for i,v in next, game:GetService("Workspace").Entities.Infected:GetChildren() do
+
+
 local args = {
     [1] = "aa",
     [2] = {
@@ -25,12 +26,11 @@ local args = {
 
 game:GetService("ReplicatedStorage").RE:FireServer(unpack(args))
 
+end
 end)
 end
 
   
-end
-
 end)
 b:Button("Kill all off",function(bool)
  getgenv().electricboogaloo = false 
@@ -50,6 +50,7 @@ MAMAMIA.__namecall = newcclosure(function(self, ...)
             ["Velocity"] = args[2][1]["Velocity"] --[[Vector3]],
             ["Special"] = "H"
         
+
 }
     end
 end
