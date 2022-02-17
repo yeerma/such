@@ -9,7 +9,6 @@ b:Button("Kill all on",function(bool)
 getgenv().electricboogaloo = true
 
 for i,v in pairs, game:GetService("Workspace").Entities.Infected:GetChildren() do
-end
 while electricboogaloo == true do
 pcall(function()
     wait()
@@ -30,6 +29,8 @@ end)
 end
 
   
+end
+
 end)
 b:Button("Kill all off",function(bool)
  getgenv().electricboogaloo = false 
