@@ -182,7 +182,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 end)
 b:Button("click for victory laugh",function() --Default bind
 local args = {
-    [1] = "he he he ha",
+    [1] = "he he he haw",
     [2] = "All"
 }
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
