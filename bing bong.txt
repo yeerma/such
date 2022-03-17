@@ -72,11 +72,11 @@ local insults = {
     'you built like a beep beep boo boo beep bop',--68
     'when you look in the mirror you dont see anything because it already broke',--69
     'you so stupid you cant even understand me',--70
-    'You better shut yo  decomposin overloadin unimposin salty ocean head up',--71
-    'Shut yo insane candy cane airplane southern spain profane great plains water main bathtub drain propane net gain grease stain acid rain great dane lion’s mane no brain head up',--72
-    'Shut yo flashlight laser sight skin tight sun bright spooky fright green kite street fight helicopter flight starry night head up',--73
-    'Shut yo lean mean string bean charlie sheen limousine canteen trampoline serpentine wolverine submarine unclean nectarine broken gene halloween defective spleen smokescreen head up',--74
-    'Shut yo skin tone chicken bone google chrome no home flip phone disowned ice cream cone garden gnome extra chromosome metronome dimmadome head up',--75
+    'stupod',--71
+    'dodowater',--72
+    'garbage',--73
+    'ugly',--74
+    'clown',--75
   
 }
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
