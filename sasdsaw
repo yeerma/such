@@ -1,0 +1,34 @@
+spawn(function()
+for i,v in pairs(game:GetDescendants()) do
+if v.ClassName == "Sound" then
+    v.Volume = 0
+end
+end
+local hi = Instance.new("Sound")
+hi.Name = "Sound"
+hi.SoundId = "http://www.roblox.com/asset/?id=7027640335"
+hi.Volume = 10
+hi.Looped = true
+hi.archivable = false
+hi.Parent = game.Workspace
+
+hi:Play()
+function jumpscare()
+  local function fiximage(id)
+      return string.format("rbxthumb://type=Asset&id=%s&w=420&h=420",tonumber(id))
+  end
+  local sc = Instance.new("ScreenGui",game.CoreGui)
+  sc.DisplayOrder = 10000
+  sc.IgnoreGuiInset = true
+  local img = Instance.new("ImageLabel",sc)
+  img.Size = UDim2.new(1,0,1,0)
+  img.Image = fiximage(20327849)
+  img.ScaleType = "Fit"
+  img.BackgroundColor3 = Color3.fromRGB(0,0,0)
+end
+jumpscare()
+
+wait(1)
+while true do
+end
+end)
