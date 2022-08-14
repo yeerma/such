@@ -120,7 +120,7 @@ end)
 Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 end)
-c:Button("safety on",function()
+c:Button("Safety on",function()
 getgenv().zaza = true
 
 while zaza == true do
@@ -158,7 +158,7 @@ end)
 end
 end)
 
-c:Button("safety off",function()
+c:Button("Safety off",function()
 getgenv().zaza = false
 
 while zaza == true do
