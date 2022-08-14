@@ -226,3 +226,19 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(41, 11, 
 end)
 
 end)
+c:Button("fake afk",function()
+local args = {
+    [1] = true
+}
+
+game:GetService("ReplicatedStorage").AFK:FireServer(unpack(args))
+
+end)
+c:Button("fake afk off",function()
+local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage").AFK:FireServer(unpack(args))
+
+end)
