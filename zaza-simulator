@@ -120,6 +120,40 @@ end)
 Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 end)
+c:Button("speed",function()
+
+_G.HackedWalkSpeed = 100
+local Plrs = game:GetService("Players")
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+while true do
+    wait(0.5)
+spawn(function()
+local speaker = game.Players.LocalPlayer
+	for _, child in pairs(speaker.Character:GetDescendants()) do
+		if child.ClassName == "Part" then
+			child.CustomPhysicalProperties = PhysicalProperties.new(100, 100, 100)
+		end
+	end
+	end)
+	end
+end)
 c:Button("Catch-a-Hoe",function()
 
 _G.HackedWalkSpeed = 300
