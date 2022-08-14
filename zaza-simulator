@@ -120,7 +120,7 @@ end)
 Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 end)
-c:Button("speed",function()
+c:Button("Speed hack",function()
 
 _G.HackedWalkSpeed = 100
 local Plrs = game:GetService("Players")
