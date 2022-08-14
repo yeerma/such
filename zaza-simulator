@@ -197,3 +197,10 @@ end)
 end
 
 end)
+c:Button("10x zone tp",function()
+
+spawn(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(41, 11, 803)
+end)
+
+end)
