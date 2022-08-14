@@ -120,6 +120,28 @@ end)
 Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 end)
+c:Button("Catch-A-Hoe",function()
+_G.HackedWalkSpeed = 150
+local Plrs = game:GetService("Players")
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+end)
 c:Button("Safety on",function()
 getgenv().zaza = true
 
@@ -202,21 +224,5 @@ c:Button("10x zone tp",function()
 spawn(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(41, 11, 803)
 end)
-
-end)
-c:Button("fake afk",function()
-local args = {
-    [1] = true
-}
-
-game:GetService("ReplicatedStorage").AFK:FireServer(unpack(args))
-
-end)
-c:Button("fake afk off",function()
-local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage").AFK:FireServer(unpack(args))
 
 end)
