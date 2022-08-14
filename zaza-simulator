@@ -1,7 +1,13 @@
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
 local w = library:CreateWindow("by booga guy") -- Creates the window
-
+local b = w:CreateFolder("credits")
+b:Label("MostGoatedGamer",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    
+}) 
 local d = w:CreateFolder("safety")
 local e = w:CreateFolder("speed hacks")
 local z = w:CreateFolder("autofarm and tp's")
