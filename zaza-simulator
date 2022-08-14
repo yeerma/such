@@ -121,6 +121,7 @@ Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 end)
 c:Button("Catch-a-Hoe",function()
+
 _G.HackedWalkSpeed = 300
 local Plrs = game:GetService("Players")
 local MyPlr = Plrs.LocalPlayer
@@ -141,6 +142,17 @@ Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
+while true do
+    wait(0.5)
+spawn(function()
+local speaker = game.Players.LocalPlayer
+	for _, child in pairs(speaker.Character:GetDescendants()) do
+		if child.ClassName == "Part" then
+			child.CustomPhysicalProperties = PhysicalProperties.new(100, 100, 100)
+		end
+	end
+	end)
+	end
 end)
 c:Button("Safety on",function()
 getgenv().zaza = true
