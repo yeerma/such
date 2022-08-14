@@ -1,24 +1,26 @@
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
-local w = library:CreateWindow("script for") -- Creates the window
+local w = library:CreateWindow("by booga guy") -- Creates the window
 
-local c = w:CreateFolder("by booga guy") -- Creates the folder(U will put here your buttons,etc)
-
-c:Button("1st area tp",function()
+local d = w:CreateFolder("safety")
+local e = w:CreateFolder("speed hacks")
+local z = w:CreateFolder("autofarm and tp's")
+local b = w:CreateFolder("trollin and killin")
+z:Button("1st area tp",function()
 
 spawn(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.00499725341797, 10.782137870788574, 179.17457580566406)
 end)
 
 end)
-c:Button("2nd area tp",function()
+z:Button("2nd area tp",function()
 
 spawn(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122, 11, 654)
 end)
 
 end)
-c:Button("safe area",function()
+d:Button("safe area",function()
 getgenv().safe = true
 while safe == true do
     wait()
@@ -28,7 +30,7 @@ end)
 end
 end)
 
-c:Button("no safe area",function()
+d:Button("no safe area",function()
 getgenv().safe = false
 while safe == true do
 wait()
@@ -38,7 +40,7 @@ end)
 end
 end)
 
-c:Button("crate collector on",function()
+z:Button("crate collector on",function()
 getgenv().crate = true
 while crate == true do
 wait()
@@ -57,7 +59,7 @@ end)
 end
 end)
 
-c:Button("crate collector off",function()
+z:Button("crate collector off",function()
 getgenv().crate = false
 
 while crate == true do
@@ -77,7 +79,7 @@ end)
 end
 end)
 
-c:Button("sword kill aura",function()
+b:Button("sword kill aura",function()
 local range = 20
 local player = game:GetService("Players").LocalPlayer
 game:GetService("RunService").RenderStepped:Connect(function()
@@ -98,7 +100,7 @@ end
 end
 end)
 end)
-c:Button("slight speed hack",function()
+e:Button("slight speed hack",function()
 _G.HackedWalkSpeed = 19
 local Plrs = game:GetService("Players")
 local MyPlr = Plrs.LocalPlayer
@@ -120,7 +122,7 @@ end)
 Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 end)
-c:Button("Speed hack",function()
+e:Button("Speed hack",function()
 
 _G.HackedWalkSpeed = 100
 local Plrs = game:GetService("Players")
@@ -154,7 +156,7 @@ local speaker = game.Players.LocalPlayer
 	end)
 	end
 end)
-c:Button("Catch-a-Hoe",function()
+e:Button("Catch-a-Hoe",function()
 
 _G.HackedWalkSpeed = 300
 local Plrs = game:GetService("Players")
@@ -188,7 +190,7 @@ local speaker = game.Players.LocalPlayer
 	end)
 	end
 end)
-c:Button("Safety on",function()
+d:Button("Safety on",function()
 getgenv().zaza = true
 
 while zaza == true do
@@ -226,7 +228,7 @@ end)
 end
 end)
 
-c:Button("Safety off",function()
+d:Button("Safety off",function()
 getgenv().zaza = false
 
 while zaza == true do
@@ -265,14 +267,14 @@ end)
 end
 
 end)
-c:Button("10x zone tp",function()
+z:Button("10x zone tp",function()
 
 spawn(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(41, 11, 803)
 end)
 
 end)
-c:Button("fake afk",function()
+b:Button("fake afk",function()
 local args = {
     [1] = true
 }
@@ -280,11 +282,461 @@ local args = {
 game:GetService("ReplicatedStorage").AFK:FireServer(unpack(args))
 
 end)
-c:Button("fake afk off",function()
+b:Button("fake afk off",function()
 local args = {
     [1] = false
 }
 
 game:GetService("ReplicatedStorage").AFK:FireServer(unpack(args))
 
+end)
+
+b:Box("catch-a-hoe tp","name",function(value) -- "number" or "string"
+    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+
+            v.Parent = game.Players.LocalPlayer.Character
+        end
+
+name = value
+
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+
+    
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+
+
+
+end
+
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.DisplayName:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2
+for i,v in pairs(game:service'Players':GetPlayers()) do
+if v.Name:match(name) and name ~= "" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame - v.Character.HumanoidRootPart.CFrame.lookVector * 2 
+
+
+
+
+
+end
+end
+end
+end
+wait()
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.00499725341797, 10.782137870788574, 179.17457580566406)
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+     if v:IsA'Tool' then
+          v.Parent = game.Players.LocalPlayer.Backpack;
+     end;
+end;
 end)
