@@ -20,28 +20,28 @@ end)
 end)
 c:Button("safe area",function()
 getgenv().safe = true
-game:GetService"RunService".RenderStepped:Connect(function()
-if safe == true then
+while safe == true do
+    wait()
 spawn(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.00499725341797, 10.782137870788574, 179.17457580566406)
 end)
 end
 end)
-end)
+
 c:Button("no safe area",function()
 getgenv().safe = false
-game:GetService"RunService".RenderStepped:Connect(function()
-if safe == true then
+while safe == true do
+wait()
 spawn(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.00499725341797, 10.782137870788574, 179.17457580566406)
 end)
 end
 end)
-end)
+
 c:Button("crate collector on",function()
 getgenv().crate = true
-game:GetService"RunService".RenderStepped:Connect(function()
-if crate == true then
+while crate == true do
+wait()
 spawn(function()
 for _,v in pairs(workspace:GetChildren()) do
 if v.Name == "timecrate500" 
@@ -56,11 +56,12 @@ end
 end)
 end
 end)
-end)
+
 c:Button("crate collector off",function()
 getgenv().crate = false
-game:GetService"RunService".RenderStepped:Connect(function()
-if crate == true then
+
+while crate == true do
+wait()
 spawn(function()
 for _,v in pairs(workspace:GetChildren()) do
 if v.Name == "timecrate500" 
@@ -75,7 +76,7 @@ end
 end)
 end
 end)
-end)
+
 c:Button("sword kill aura",function()
 local range = 20
 local player = game:GetService("Players").LocalPlayer
@@ -118,4 +119,81 @@ Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
 Hum.WalkSpeed = _G.HackedWalkSpeed
 end)
+end)
+c:Button("safety on",function()
+getgenv().zaza = true
+
+while zaza == true do
+wait()
+spawn(function()
+local localPlayer = game:GetService("Players").LocalPlayer
+local currentCamera = game:GetService("Workspace").CurrentCamera
+local mouse = localPlayer:GetMouse()
+
+local function getClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = 20
+
+    for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+        if v.Name ~= localPlayer.Name then
+            if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Head") then
+                local magnitude = (v.Character.HumanoidRootPart.Position - localPlayer.Character.HumanoidRootPart.Position).magnitude
+
+                if magnitude < shortestDistance then
+                    closestPlayer = v
+                    shortestDistance = magnitude
+                end
+			end
+        end
+    end
+
+    return closestPlayer
+end
+if getClosestPlayer() ~= nil then
+spawn(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.00499725341797, 10.782137870788574, 179.17457580566406)
+end)
+end
+end)
+end
+end)
+
+c:Button("safety off",function()
+getgenv().zaza = false
+
+while zaza == true do
+wait()
+wait()
+spawn(function()
+local localPlayer = game:GetService("Players").LocalPlayer
+local currentCamera = game:GetService("Workspace").CurrentCamera
+local mouse = localPlayer:GetMouse()
+
+local function getClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = 20
+
+    for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+        if v.Name ~= localPlayer.Name then
+            if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Head") then
+                local magnitude = (v.Character.HumanoidRootPart.Position - localPlayer.Character.HumanoidRootPart.Position).magnitude
+
+                if magnitude < shortestDistance then
+                    closestPlayer = v
+                    shortestDistance = magnitude
+                end
+			end
+        end
+    end
+
+    return closestPlayer
+end
+if getClosestPlayer() ~= nil then
+spawn(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.00499725341797, 10.782137870788574, 179.17457580566406)
+end)
+end
+end)
+end
+
 end)
