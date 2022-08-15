@@ -7,7 +7,13 @@ b:Label("MostGoatedGamer",{
     TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
     BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
     
-}) 
+})
+b:Label("MagicalWhiteMan",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255); -- Self Explaining
+    BgColor = Color3.fromRGB(69,69,69); -- Self Explaining
+    
+})
 local d = w:CreateFolder("safety")
 local e = w:CreateFolder("speed hacks")
 local z = w:CreateFolder("autofarm and tp's")
