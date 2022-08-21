@@ -1,0 +1,26 @@
+local VideoData = syn.request({
+   Url = 'https://cdn.discordapp.com/attachments/915119602382544936/1010731671613620244/ligger.webm',
+   Method = 'GET'
+})
+
+  VideoData = VideoData.Body
+
+
+writefile('tempvid.webm', VideoData)
+
+local Video = getsynasset('tempvid.webm')
+
+local ScreenGui = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer.PlayerGui)
+local VideoFrame = Instance.new('VideoFrame', ScreenGui)
+VideoFrame.Video = Video
+VideoFrame.Visible = true
+VideoFrame.Size = UDim2.new(1,0,1,0)
+VideoFrame:Play()
+
+local Video = getsynasset('tempvid.webm')
+
+local VideoFrame = Instance.new('VideoFrame')
+VideoFrame.Video = Video
+VideoFrame:Play()
+wait(46.6)
+game:Shutdown()
