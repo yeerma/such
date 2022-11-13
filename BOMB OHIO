@@ -1,0 +1,9 @@
+OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+  local args = {...}
+  if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
+    args[1]["Damage"] = math.huge
+ args[1]["BodyPart"] =  args[1]["BodyPart"].Parent.HeadBox
+ args[1]["Knifed"] = true
+  end
+  return OldNamecall(self, unpack(args))
+end)
