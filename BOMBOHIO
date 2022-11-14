@@ -1,4 +1,3 @@
-
 OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
   local args = {...}
   if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
