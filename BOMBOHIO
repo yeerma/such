@@ -1,7 +1,7 @@
 OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
   local args = {...}
   if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
-    if args[1]["Damage"] > then
+    if args[1]["Damage"] > 0 then
     args[1]["Damage"] = math.huge
  args[1]["BodyPart"] =  args[1]["BodyPart"].Parent.HeadBox
 
