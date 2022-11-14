@@ -1,4 +1,7 @@
 
+if not _G.isRunning then
+_G.isRunning = true
+
 local zaza = 0
 spawn(function()
 OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
@@ -52,3 +55,11 @@ end
 
 end
 end)
+else 
+game.StarterGui:SetCore("SendNotification", {
+Title = "script already runnin"; -- the title (ofc)
+Text = ""; -- what the text says (ofc)
+Icon = ""; -- the image if u want. 
+Duration = 1.5; -- how long the notification should in secounds
+})
+end
