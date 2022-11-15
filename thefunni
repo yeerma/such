@@ -37,15 +37,15 @@ local args = {
 }
 
 workspace.Baddies.Zombie.Humanoid.Damage:FireServer(unpack(args))
+
+end
+
 local args = {
     [1] = "/w goodluck3646 hey",
     [2] = "All"
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
-
-end
-
 
 end)
 
