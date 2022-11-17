@@ -1,0 +1,27 @@
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("by ooogabooga") 
+
+local b = w:CreateFolder("close with ctrl") 
+
+b:Box("dmg multiplier","number",function(value) 
+getgenv().multiplier = value
+if not _G.isRunning then
+_G.isRunning = true
+
+
+spawn(function()
+OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+  local args = {...}
+  if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
+  args[1]["Damage"] = args[1]["Damage"]*multiplier
+end
+  return OldNamecall(self, unpack(args))
+end)
+end)
+
+end
+end)
+
+
+
