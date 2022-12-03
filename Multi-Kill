@@ -1,0 +1,47 @@
+-- note for oooga booga. this is the multi kill. dont switch up the two stupid fuck
+getgenv().Players = game:GetService("Players")
+getgenv().player = game:GetService("Players").LocalPlayer
+getgenv().fff = false
+getgenv().Mouse = player:GetMouse()
+
+game:GetService("RunService").RenderStepped:Connect(function()
+  
+if Mouse.Target and Players:FindFirstChild(Mouse.Target.Parent.Name) and Mouse.Target.Parent:FindFirstChild("Humanoid") and Mouse.Target.Parent:FindFirstChild("Humanoid").Health > 0 and fff == true then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+    for i,ihateblackies in next, Mouse.Target.Parent:GetChildren() do
+                    if ihateblackies:IsA("BasePart")  then
+                        firetouchinterest(tool.Handle,ihateblackies,0)
+                        firetouchinterest(tool.Handle,ihateblackies,1)
+                    end
+                end
+            end
+
+
+end
+end)
+Mouse.KeyDown:connect(function(key)
+if key == "z" then
+
+    getgenv().fff = true
+               game:GetService('StarterGui'):SetCore('SendNotification', {
+       Title = 'im turned on daddy',
+       Text = "",
+       Duration = 1
+   })
+ 
+end
+
+end)
+Mouse.KeyUp:connect(function(key)
+if key == "z" then
+getgenv().fff = false
+                   game:GetService('StarterGui'):SetCore('SendNotification', {
+       Title = 'you ugly as hell',
+       Text = "im turned off now",
+       Duration = 1
+   })    
+end
+
+end)
