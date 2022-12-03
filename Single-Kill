@@ -4,6 +4,7 @@ getgenv().player = game:GetService("Players").LocalPlayer
 getgenv().fff = false
 getgenv().Mouse = player:GetMouse()
 getgenv().goofyahhplayer = nil
+
 game:GetService("RunService").RenderStepped:Connect(function()
   if fff == true then
 
@@ -45,3 +46,13 @@ end
 end
 end
 end)
+while true do
+    wait(0.1)
+       for i,normal in next, Players:GetChildren() do
+    for i,i_support_edp445_aka_enter_dat_prison_for_45_years in next, normal.Character:GetChildren() do
+                    if i_support_edp445_aka_enter_dat_prison_for_45_years:IsA("Accessory")  then
+i_support_edp445_aka_enter_dat_prison_for_45_years:Destroy()
+                    end
+    end
+       end
+            end
