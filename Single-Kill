@@ -37,7 +37,7 @@ Mouse.Target.Parent:FindFirstChild("Humanoid").Health > 0
 getgenv().ligger = true
 while ligger == true do
     wait()
-    if Mouse.Target.Parent:FindFirstChild("Humanoid").Health > 0 or player.Character:FindFirstChild("Humanoid").Health > 0 then
+    if goofyahhplayer:FindFirstChild("Humanoid").Health > 0 or player.Character:FindFirstChild("Humanoid").Health > 0 then
         getgenv().fff = false
         wait()
         getgenv().ligger = false
