@@ -1,0 +1,29 @@
+
+getgenv().MAJORKEY = "z"
+_G.isRunning = false
+if not _G.isRunning then
+_G.isRunning = true
+local hi = Instance.new("Sound")
+hi.Name = "Sound"
+hi.SoundId = "rbxassetid://154157386"
+hi.Volume = 10
+hi.Looped = false
+hi.PlaybackSpeed = 0.85
+hi.archivable = false
+hi.Parent = game.Workspace
+
+
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+Mouse.KeyDown:connect(function(key)
+if key == MAJORKEY then
+      for _,AnimTrack in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+        if AnimTrack.Animation.AnimationId ~= "http://www.roblox.com/asset/?id=128777973" then
+ hi:Play()
+game:GetService("Players"):Chat("/e wave")
+
+
+end
+end
+end
+end)
+end
