@@ -1,0 +1,66 @@
+-- note for oooga booga. this is the single kill npc. dont switch up the two stupid fuck
+
+getgenv().player = game:GetService("Players").LocalPlayer
+getgenv().fff = false
+getgenv().Mouse = player:GetMouse()
+getgenv().goofyahhnpc = nil
+
+game:GetService("RunService").RenderStepped:Connect(function()
+  if fff == true then
+
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+    for i,ihateblackies in next, goofyahhnpc:GetChildren() do
+                    if ihateblackies:IsA("BasePart")  then
+                        firetouchinterest(tool.Handle,ihateblackies,0)
+                        firetouchinterest(tool.Handle,ihateblackies,1)
+                    end
+                end
+            end   
+     
+     end
+
+
+
+end)
+Mouse.KeyDown:connect(function(key)
+if key == "z" then
+    getgenv().fff = true
+getgenv().oooog = true
+while oooog == true do
+    wait()
+if Mouse.Target and 
+ 
+Mouse.Target.Parent:IsA("Model") then
+ for i,wewewe in next, Mouse.Target.Parent:GetChildren() do
+     if wewewe:IsA("Humanoid") and wewewe.Health > 0 then
+    getgenv().goofyahhnpc = Mouse.Target.Parent
+  
+
+end
+end
+end
+end
+
+end
+
+end)
+Mouse.KeyUp:connect(function(key)
+if key == "z" then
+getgenv().oooog = false
+getgenv().fff = false
+  
+end
+
+end)
+while true do
+    wait(0.3)
+       for i,normal in next, game.Workspace:GetDescendants() do
+
+                    if normal:IsA("Accessory")  then
+normal:Destroy()
+                    end
+   
+       end
+            end
