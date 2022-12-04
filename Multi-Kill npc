@@ -1,58 +1,66 @@
+-- note for oooga booga. this is the single kill npc. dont switch up the two stupid fuck
 
-getgenv().jigger = false
-local hi = Instance.new("Sound")
-hi.Name = "Sound"
-hi.SoundId = "http://www.roblox.com/asset/?id=9114759339"
-hi.Volume = 2
-hi.Looped = false
-hi.archivable = false
-hi.Parent = game.Workspace
+getgenv().player = game:GetService("Players").LocalPlayer
+getgenv().fff = false
+getgenv().Mouse = player:GetMouse()
+getgenv().goofyahhnpc = nil
 
-local speaker = game.Players.LocalPlayer
-local Anim = Instance.new("Animation")
-     Anim.AnimationId = "rbxassetid://148840371"
-     local bruh = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+game:GetService("RunService").RenderStepped:Connect(function()
+  if fff == true then
+
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+    for i,ihateblackies in next, goofyahhnpc:GetChildren() do
+                    if ihateblackies:IsA("BasePart")  then
+                        firetouchinterest(tool.Handle,ihateblackies,0)
+                        firetouchinterest(tool.Handle,ihateblackies,1)
+                    end
+                end
+            end   
+     
+     end
 
 
-		
-local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+
+end)
 Mouse.KeyDown:connect(function(key)
 if key == "z" then
+    getgenv().fff = true
+getgenv().oooog = true
+while oooog == true do
+    wait()
+if Mouse.Target and 
+ 
+Mouse.Target.Parent:IsA("Model") then
+ for i,wewewe in next, Mouse.Target.Parent:GetChildren() do
+     if wewewe:IsA("Humanoid") and wewewe.Health > 0 then
+    getgenv().goofyahhnpc = Mouse.Target.Parent
+  
 
-getgenv().jigger = true
-local Anim = Instance.new("Animation")
-     Anim.AnimationId = "rbxassetid://148840371"
-     local bruh = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
-
-bruh:Play()
-bruh:AdjustSpeed(10)	
-	while jigger == true do
-
-hi:Play()
-wait(0.2)
-end
-if game.Players.LocalPlayer.Character.Humanoid.RigType.Name ~= "R6" then
-
-                           game:GetService('StarterGui'):SetCore('SendNotification', {
-       Title = 'Hey',
-       Text = "you need to be R6",
-       Duration = 1
-   })    
 end
 end
-
-
-end)
-
-Mouse.KeyDown:connect(function(key)
-if key == "x" then
-getgenv().jigger = false
-for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
-	v:Stop()
-end	
+end
+end
 
 end
 
 end)
+Mouse.KeyUp:connect(function(key)
+if key == "z" then
+getgenv().oooog = false
+getgenv().fff = false
+  
+end
 
+end)
+while true do
+    wait(0.3)
+       for i,normal in next, game.Workspace:GetDescendants() do
 
+                    if normal:IsA("Accessory")  then
+normal:Destroy()
+                    end
+   
+       end
+            end
