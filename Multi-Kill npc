@@ -26,7 +26,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 Mouse.KeyDown:connect(function(key)
 if key == "z" then
-    getgenv().fff = true
 getgenv().oooog = true
 while oooog == true do
     wait()
@@ -36,7 +35,8 @@ Mouse.Target.Parent:IsA("Model") then
  for i,wewewe in next, Mouse.Target.Parent:GetChildren() do
      if wewewe:IsA("Humanoid") and wewewe.Health > 0 then
     getgenv().goofyahhnpc = Mouse.Target.Parent
-  
+      getgenv().fff = true
+
 
 end
 end
