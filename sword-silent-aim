@@ -1,4 +1,3 @@
-
 getgenv().player = game:GetService("Players").LocalPlayer
 getgenv().ssss = false
 
@@ -22,7 +21,7 @@ local function getClosestPlayer()
     for i, v in pairs(game:GetService("Players"):GetPlayers()) do
         if v.Name ~= localPlayer.Name then
             if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Head") then
-                local magnitude = (v.Character.HumanoidRootPart.Position - tool.Handle.Position).magnitude
+                local magnitude = (v.Character.HumanoidRootPart.Position - localPlayer.Character.HumanoidRootPart.Position).magnitude
 
                 if magnitude < shortestDistance then
                     closestPlayer = v
@@ -38,8 +37,10 @@ tool.Activated:Connect(function()
                 if getClosestPlayer() ~= nil then
                 for i,v in next, getClosestPlayer().Character:GetChildren() do
                     if v:IsA("BasePart") then
+                        for i = 0,5 do
                         firetouchinterest(tool.Handle,v,0)
                         firetouchinterest(tool.Handle,v,1)
+                        end
                     end
                 end
     
@@ -48,7 +49,3 @@ tool.Activated:Connect(function()
 end)
 end
  end
-
-
-
-
