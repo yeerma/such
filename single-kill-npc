@@ -28,14 +28,17 @@ Mouse.KeyDown:connect(function(key)
 if key == "z" then
 if Mouse.Target and 
  
-Mouse.Target.Parent:IsA("Model") then
+Mouse.Target.Parent:FindFirstChildWhichIsA("Humanoid") then
  for i,wewewe in next, Mouse.Target.Parent:GetChildren() do
      if wewewe:IsA("Humanoid") and wewewe.Health > 0 then
     getgenv().goofyahhnpc = Mouse.Target.Parent
     getgenv().zzzz = wewewe.Parent
     getgenv().humanoidhealth = wewewe.Health
     getgenv().fff = true
-
+                           while fff == true do
+wait()
+mouse1click()
+end
 getgenv().ligger = true
 while ligger == true do
     wait()
@@ -43,6 +46,10 @@ while ligger == true do
         getgenv().fff = false
         wait()
         getgenv().ligger = false
+                           while fff == true do
+wait()
+mouse1click()
+end
 end
 end
 end
@@ -50,6 +57,13 @@ end
 end
 end
 end)
+Mouse.KeyDown:connect(function(key)
+if key == "x" then
+          getgenv().fff = false
+        wait()
+        getgenv().ligger = false
+end
+    end)
 while true do
     wait(0.3)
        for i,normal in next, game.Workspace:GetDescendants() do
