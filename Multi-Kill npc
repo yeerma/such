@@ -1,66 +1,68 @@
--- note for oooga booga. this is the single kill npc. dont switch up the two stupid fuck
 
 getgenv().player = game:GetService("Players").LocalPlayer
 getgenv().fff = false
 getgenv().Mouse = player:GetMouse()
-getgenv().goofyahhnpc = nil
 
 game:GetService("RunService").RenderStepped:Connect(function()
-  if fff == true then
-
+  
+if Mouse.Target and Mouse.Target.Parent:FindFirstChildWhichIsA("Humanoid") and Mouse.Target.Parent:FindFirstChildWhichIsA("Humanoid").Health > 0 and fff == true then
+           
             local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
             if tool and tool:FindFirstChild("Handle") then
-                tool:Activate()
-    for i,ihateblackies in next, goofyahhnpc:GetChildren() do
+                
+                
+    for i,ihateblackies in next, Mouse.Target.Parent:GetChildren() do
                     if ihateblackies:IsA("BasePart")  then
                         firetouchinterest(tool.Handle,ihateblackies,0)
                         firetouchinterest(tool.Handle,ihateblackies,1)
                     end
                 end
-            end   
-     
-     end
+            
 
-
-
+end
+end
 end)
 Mouse.KeyDown:connect(function(key)
 if key == "z" then
+
     getgenv().fff = true
-getgenv().oooog = true
-while oooog == true do
-    wait()
-if Mouse.Target and 
+                      while fff == true do
+wait()
+mouse1click()
+end
+               game:GetService('StarterGui'):SetCore('SendNotification', {
+       Title = 'im turned on daddy',
+       Text = "",
+       Duration = 1
+   })
  
-Mouse.Target.Parent:IsA("Model") then
- for i,wewewe in next, Mouse.Target.Parent:GetChildren() do
-     if wewewe:IsA("Humanoid") and wewewe.Health > 0 then
-    getgenv().goofyahhnpc = Mouse.Target.Parent
-  
-
-end
-end
-end
-end
-
 end
 
 end)
 Mouse.KeyUp:connect(function(key)
 if key == "z" then
-getgenv().oooog = false
 getgenv().fff = false
-  
+                           while fff == true do
+wait()
+mouse1click()
+end
+                   game:GetService('StarterGui'):SetCore('SendNotification', {
+       Title = 'you ugly as hell',
+       Text = "im turned off now",
+       Duration = 1
+   })    
 end
 
 end)
 while true do
-    wait(0.3)
-       for i,normal in next, game.Workspace:GetDescendants() do
+    wait(0.1)
+       if Mouse.Target and Mouse.Target.Parent:FindFirstChildWhichIsA("Humanoid") then
 
-                    if normal:IsA("Accessory")  then
-normal:Destroy()
+    for i,i_support_edp445_aka_enter_dat_prison_for_45_years in next, Mouse.Target.Parent:GetChildren() do
+                    if i_support_edp445_aka_enter_dat_prison_for_45_years:IsA("Accessory")  then
+i_support_edp445_aka_enter_dat_prison_for_45_years:Destroy()
                     end
    
        end
-            end
+       end
+end
