@@ -24,17 +24,17 @@ end
 end)
 Mouse.KeyDown:connect(function(key)
 if key == "z" then
-
-    getgenv().fff = true
-                      while fff == true do
-wait()
-mouse1click()
-end
                game:GetService('StarterGui'):SetCore('SendNotification', {
        Title = 'im turned on daddy',
        Text = "",
        Duration = 1
    })
+    getgenv().fff = true
+                      while fff == true do
+wait()
+mouse1click()
+end
+
  
 end
 
