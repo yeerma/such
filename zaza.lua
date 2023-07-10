@@ -50,7 +50,7 @@ game.StarterGui:SetCore("SendNotification", {
             if zaza ~= 0 or (LocalPlayer.Character and LocalPlayer.Character.Humanoid.Health <= 0) then
                 game.StarterGui:SetCore("SendNotification", {
                     Title = "Hey Bro",
-                    Text = "You can use it now by saying !points ",
+                    Text = "You can use it now by saying !points number",
                     Icon = "",
                     Duration = 1.5,
                 })
