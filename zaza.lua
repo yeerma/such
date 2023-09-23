@@ -1,107 +1,87 @@
-if not _G.isRunning then
-    _G.isRunning = true
+assert(_G.IsRunning == false, "Error: Already Running")
+_G.IsRunning = true
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
-local PowerUps
-local hasShotZombie = false
+local PowerUps = nil
+local MoneyThing = false
+local PlayerGui = LocalPlayer.PlayerGui
 
-if LocalPlayer.PlayerGui:FindFirstChild("HUD") then
-    PowerUps = LocalPlayer.PlayerGui.HUD:FindFirstChild("PowerUps")
+if PlayerGui.HUD then
+    PowerUps = PlayerGui.HUD:FindFirstChild("PowerUps")
 end
 
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Hey Bro",
-    Text = "Remember, You Gotta Shoot A Zombie First.",
-    Icon = "",
-    Duration = 1.5,
-})
-    spawn(function()
-        local zaza = 0
+local function SendNotification(Title, Text, Duration)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = Title,
+        Text = Text,
+        Icon = "",
+        Duration = Duration or 1.5
+    })
+end
 
-        spawn(function()
-            OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
-                local args = {...}
-                if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
-                    zaza = args[2]
-                end
-                return OldNamecall(self, ...)
-            end)
-        end)
+SendNotification("Hello,", "Make Sure You Shoot A Zombie First", 4)
 
-        local function themcash(number)
-            for i = 1, number do
-                local args = {
-                    [1] = {
-                        ["BodyPart"] = workspace.Baddies.Zombie.HeadBox,
-                        ["Force"] = 0,
-                        ["GibPower"] = 0,
-                        ["Damage"] = 0
-                    },
-                    [2] = zaza
-                }
+task.spawn(function()
+    local Zaza = 0
 
-                workspace.Baddies.Zombie.Humanoid.Damage:FireServer(unpack(args))
+    task.spawn(function()
+        local OldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+            local Args = {...}
+            if getnamecallmethod() == "FireServer" and self.Name == "Damage" then
+                Zaza = Args[2]
             end
-            hasShotZombie = true
-        end
-
-        while true do
-            wait()
-            if zaza ~= 0 or (LocalPlayer.Character and LocalPlayer.Character.Humanoid.Health <= 0) then
-                game.StarterGui:SetCore("SendNotification", {
-                    Title = "Hey Bro",
-                    Text = "You can use it now by saying !points number",
-                    Icon = "",
-                    Duration = 1.5,
-                })
-                break
-            end
-        end
-
-        LocalPlayer.CharacterAdded:Connect(function(character)
-            if not hasShotZombie then
-                game.StarterGui:SetCore("SendNotification", {
-                    Title = "Hey Bro",
-                    Text = "Remember, You Gotta Shoot A Zombie First.",
-                    Icon = "",
-                    Duration = 1.5,
-                })
-            end
-        end)
-
-        LocalPlayer.Chatted:Connect(function(message)
-            local _, _, command, amount = string.find(message, "^(%S+)%s?(%d+)$")
-
-            if command == "!points" and amount then
-                local points = tonumber(amount)
-                spawn(function()
-                    if workspace.Baddies:FindFirstChild("Zombie") then
-                        if zaza ~= 0 then
-                            if PowerUps and PowerUps:FindFirstChild("InstaKill") then
-                                game.StarterGui:SetCore("SendNotification", {
-                                    Title = "Hey Bro",
-                                    Text = "You can't use it on instakill",
-                                    Icon = "",
-                                    Duration = 1.5,
-                                })
-                            else
-                                if PowerUps and PowerUps:FindFirstChild("DoublePoints") then
-                                    themcash(points / 20)
-                                else
-                                    themcash(points / 10)
-                                end
-                            end
-                        end
-                    else
-                        game.StarterGui:SetCore("SendNotification", {
-                            Title = "Hey Bro",
-                            Text = "There are no zombies",
-                            Icon = "",
-                            Duration = 1.5,
-                        })
-                    end
-                end)
-            end
+            return OldNamecall(self, ...)
         end)
     end)
-end
+
+    local function Cash(Number)
+        local DamageEvent = workspace.Baddies.Zombie.Humanoid.Damage
+        for i = 1, Number do
+            local Args = {
+                BodyPart = workspace.Baddies.Zombie.HeadBox,
+                Force = 0,
+                GibPower = 0,
+                Damage = 0
+            }
+            DamageEvent:FireServer(Args, Zaza)
+        end
+        MoneyThing = true
+    end
+
+    while true do
+        task.wait()
+        if Zaza ~= 0 or (LocalPlayer.Character and LocalPlayer.Character.Humanoid.Health <= 0) then
+            SendNotification("Hello,", "You Can Use It Via !points")
+            break
+        end
+    end
+
+    LocalPlayer.CharacterAdded:Connect(function(Character)
+        if not MoneyThing then
+            SendNotification("Hello,", "Shoot A Zombie First.")
+        end
+    end)
+
+    LocalPlayer.Chatted:Connect(function(Message)
+        local Command, Amount = string.find(Message, "^(%S+)%s?(%d+)$")
+
+        if Command == "!points" and Amount then
+            local Points = tonumber(Amount)
+            task.spawn(function()
+                local Baddies = workspace.Baddies
+                if Baddies:FindFirstChild("Zombie") then
+                    if Zaza ~= 0 then
+                        if PowerUps and PowerUps:FindFirstChild("InstaKill") then
+                            SendNotification("Error", "You can't use it on instakill")
+                        else
+                            Cash(Points / (PowerUps and PowerUps:FindFirstChild("DoublePoints") and 20 or 10))
+                        end
+                    end
+                else
+                    SendNotification("Error", "No Zombies Are Found")
+                end
+            end)
+        end
+    end)
+end)
